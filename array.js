@@ -248,3 +248,25 @@ let temp = array[0]
 array[0] = array[array.length - 1]
 array[array.length - 1] = temp
 console.log('Array after interchange:', array)
+
+
+
+// bracket verification 
+
+function bp(str) { 
+let stack = [] 
+let pairs = {')':'(', ']':'[', '}':'{'} 
+for(let p of str){ 
+if(p === '(' || p === '{' || p === '[') { 
+stack.push(p) 
+} else if(p === ')' || p === '}' || p === ']') { 
+if(stack.length === 0 || stack.pop() !== pairs[p]){ 
+return false 
+} } } 
+return stack.length === 0 } 
+console.log(bp('([{}])')) 
+
+// array summation 
+
+let arr = [1 , 2 , 3 , 4 , 5] 
+let res = arr.reduce((pv, cv) => { return pv + cv }, 0 ) console.log(res)
